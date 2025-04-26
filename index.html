@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Manutenção de Colheitadeiras John Deere</title>
+    <style>
+        :root {
+            --primary-color: #367C2B;
+            --secondary-color: #FFDE00;
+            --dark-color: #1E3F20;
+            --light-color: #F5F5F5;
+            --accent-color: #FF8C00;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/john_deere_harvester.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .feature h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .installation {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .installation h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .installation ol {
+            margin-left: 1.5rem;
+        }
+        
+        .installation li {
+            margin-bottom: 1rem;
+        }
+        
+        .installation code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/john_deere_logo.svg+xml" alt="John Deere Logo" class="logo">
+            <h1>Sistema de Controle de Manutenção de Colheitadeiras</h1>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Gerencie sua frota com eficiência</h2>
+            <p>Solução completa para o gerenciamento de manutenções preventivas e corretivas, controle de horas de trabalho, trocas de óleo e estoque de peças para colheitadeiras John Deere.</p>
+            <a href="sistema_manutencao_agricola_final.zip" class="btn btn-primary">Baixar Sistema</a>
+            <a href="#instalacao" class="btn">Ver Instruções de Instalação</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="features">
+            <div class="feature">
+                <h3>Manutenções Preventivas</h3>
+                <p>Agende e acompanhe manutenções preventivas baseadas em horas de uso, garantindo que suas colheitadeiras estejam sempre em perfeitas condições de operação.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Manutenções Corretivas</h3>
+                <p>Registre falhas, peças substituídas e soluções aplicadas, criando um histórico completo de todas as manutenções corretivas realizadas em cada equipamento.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Controle de Horímetro</h3>
+                <p>Monitore as horas de trabalho de cada colheitadeira, permitindo um planejamento preciso das manutenções e substituição de componentes.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Trocas de Óleo</h3>
+                <p>Registre e acompanhe todas as trocas de óleo, com informações sobre tipo, quantidade e próxima troca programada baseada em horas de uso.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Gestão de Estoque</h3>
+                <p>Controle completo do estoque de peças e produtos, com alertas de níveis mínimos e registro de todas as movimentações de entrada e saída.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Relatórios Detalhados</h3>
+                <p>Gere relatórios detalhados sobre o histórico de manutenções, uso de peças, horas trabalhadas e muito mais para uma gestão eficiente da sua frota.</p>
+            </div>
+        </section>
+        
+        <section id="instalacao" class="installation">
+            <h2>Instruções de Instalação Simplificadas</h2>
+            <p>Siga estes passos simples para instalar e executar o Sistema de Controle de Manutenção de Colheitadeiras:</p>
+            
+            <ol>
+                <li><strong>Baixe o sistema</strong> clicando no botão "Baixar Sistema" acima.</li>
+                
+                <li><strong>Descompacte o arquivo</strong> em uma pasta de sua escolha.</li>
+                
+                <li><strong>Instale as dependências</strong> executando o seguinte comando no terminal:
+                    <br><code>pip install -r requirements.txt</code>
+                </li>
+                
+                <li><strong>Inicialize o banco de dados</strong> executando:
+                    <br><code>python init_db.py</code>
+                </li>
+                
+                <li><strong>Inicie a aplicação</strong> com o comando:
+                    <br><code>python app.py</code>
+                </li>
+                
+                <li><strong>Acesse o sistema</strong> abrindo seu navegador e visitando:
+                    <br><code>http://localhost:5000</code>
+                </li>
+            </ol>
+            
+            <p><strong>Credenciais de acesso:</strong></p>
+            <ul>
+                <li><strong>Administrador:</strong> admin / admin123</li>
+                <li><strong>Técnico:</strong> tecnico / tecnico123</li>
+                <li><strong>Operador:</strong> operador / operador123</li>
+            </ul>
+            
+            <h3>Implantação Online (Opcional)</h3>
+            <p>Para implantar o sistema online e acessá-lo de qualquer lugar, recomendamos o uso da plataforma Render:</p>
+            
+            <ol>
+                <li>Crie uma conta no <a href="https://render.com" target="_blank">Render</a></li>
+                <li>Clique em "New +" e selecione "Web Service"</li>
+                <li>Escolha a opção "Upload Files" e faça upload do arquivo ZIP do sistema</li>
+                <li>Configure o serviço:
+                    <ul>
+                        <li><strong>Nome:</strong> sistema-manutencao-colheitadeiras</li>
+                        <li><strong>Runtime:</strong> Python 3</li>
+                        <li><strong>Build Command:</strong> <code>pip install -r requirements.txt</code></li>
+                        <li><strong>Start Command:</strong> <code>gunicorn app:app</code></li>
+                    </ul>
+                </li>
+                <li>Em "Advanced", adicione as variáveis de ambiente:
+                    <ul>
+                        <li><code>FLASK_APP</code>: app.py</li>
+                        <li><code>FLASK_ENV</code>: production</li>
+                        <li><code>SECRET_KEY</code>: sistema_manutencao_secret_key</li>
+                    </ul>
+                </li>
+                <li>Após a implantação, acesse a seção "Shell" e execute: <code>python init_db.py</code></li>
+            </ol>
+        </section>
+        
+        <section class="screenshots">
+            <div class="screenshot">
+                <img src="images/dashboard.png" alt="Dashboard do Sistema">
+            </div>
+            <div class="screenshot">
+                <img src="images/colheitadeiras.png" alt="Listagem de Colheitadeiras">
+            </div>
+            <div class="screenshot">
+                <img src="images/manutencao.png" alt="Registro de Manutenção">
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistema de Controle de Manutenção de Colheitadeiras John Deere</p>
+            <p>Desenvolvido para <strong>viniszymanowski@gmail.com</strong></p>
+        </div>
+    </footer>
+</body>
+</html>

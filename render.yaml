@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sistema-manutencao-colheitadeiras
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_APP
+        value: app.py
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: sistema_manutencao_secret_key_auto_deploy
+    initialDeployHooks:
+      - python init_db.py

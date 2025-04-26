@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Sistema de Controle de Manutenção de Colheitadeiras</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/john-deere-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #367C2B;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .doc-section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+        .sidebar .nav-link {
+            color: #333;
+        }
+        .sidebar .nav-link.active {
+            color: #367C2B;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #367C2B;">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/john_deere_logo.svg+xml" alt="John Deere Logo" height="30">
+                Sistema de Manutenção
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="documentacao.html">Documentação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="instalacao.html">Instalação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">Download</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="header">
+        <div class="container">
+            <h1>Documentação do Sistema</h1>
+            <p class="lead">Guia completo para entender e utilizar o Sistema de Controle de Manutenção de Colheitadeiras</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="list-group">
+                        <a href="#visao-geral" class="list-group-item list-group-item-action">Visão Geral</a>
+                        <a href="#funcionalidades" class="list-group-item list-group-item-action">Funcionalidades</a>
+                        <a href="#estrutura" class="list-group-item list-group-item-action">Estrutura do Sistema</a>
+                        <a href="#colheitadeiras" class="list-group-item list-group-item-action">Gestão de Colheitadeiras</a>
+                        <a href="#manutencoes" class="list-group-item list-group-item-action">Manutenções</a>
+                        <a href="#horimetro" class="list-group-item list-group-item-action">Registros de Horímetro</a>
+                        <a href="#trocas-oleo" class="list-group-item list-group-item-action">Trocas de Óleo</a>
+                        <a href="#estoque" class="list-group-item list-group-item-action">Gestão de Estoque</a>
+                        <a href="#usuarios" class="list-group-item list-group-item-action">Usuários e Permissões</a>
+                        <a href="#api" class="list-group-item list-group-item-action">Documentação da API</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="visao-geral" class="doc-section">
+                    <h2>Visão Geral</h2>
+                    <p>
+                        O Sistema de Controle de Manutenção de Colheitadeiras é uma aplicação web desenvolvida em Python com o framework Flask, 
+                        projetada para gerenciar todos os aspectos relacionados à manutenção de colheitadeiras agrícolas, com foco especial em 
+                        equipamentos da marca John Deere.
+                    </p>
+                    <p>
+                        O sistema permite o controle completo de manutenções preventivas e corretivas, monitoramento de horas de trabalho através 
+                        do horímetro, registro de trocas de óleo e gestão de estoque de peças e produtos necessários para as manutenções.
+                    </p>
+                </div>
+
+                <div id="funcionalidades" class="doc-section">
+                    <h2>Funcionalidades Principais</h2>
+                    <ul>
+                        <li><strong>Cadastro de Colheitadeiras:</strong> Registro completo com modelo, ano, número de frota e status operacional.</li>
+                        <li><strong>Manutenções Preventivas:</strong> Agendamento baseado em horas de uso ou datas específicas.</li>
+                        <li><strong>Manutenções Corretivas:</strong> Registro de falhas, soluções aplicadas e peças substituídas.</li>
+                        <li><strong>Registros de Horímetro:</strong> Acompanhamento das horas de trabalho de cada equipamento.</li>
+                        <li><strong>Trocas de Óleo:</strong> Controle de trocas realizadas e programação das próximas trocas.</li>
+                        <li><strong>Gestão de Estoque:</strong> Controle de peças e produtos com alertas de níveis mínimos.</li>
+                        <li><strong>Relatórios:</strong> Geração de relatórios detalhados sobre manutenções, uso de peças e horas trabalhadas.</li>
+                        <li><strong>Controle de Usuários:</strong> Diferentes níveis de acesso para administradores, técnicos e operadores.</li>
+                    </ul>
+                </div>
+
+                <div id="estrutura" class="doc-section">
+                    <h2>Estrutura do Sistema</h2>
+                    <p>
+                        O sistema foi desenvolvido seguindo o padrão MVC (Model-View-Controller) e utiliza as seguintes tecnologias:
+                    </p>
+                    <ul>
+                        <li><strong>Backend:</strong> Python com Flask</li>
+                        <li><strong>Banco de Dados:</strong> SQLite (desenvolvimento) / MySQL (produção)</li>
+                        <li><strong>ORM:</strong> SQLAlchemy</li>
+                        <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap</li>
+                        <li><strong>Autenticação:</strong> Flask-Login</li>
+                    </ul>
+                    <p>
+                        A estrutura de arquivos do sistema é organizada da seguinte forma:
+                    </p>
+                    <pre>
+sistema_manutencao_agricola/
+├── app.py                  # Arquivo principal da aplicação
+├── models.py               # Modelos de dados (SQLAlchemy)
+├── config.py               # Configurações da aplicação
+├── init_db.py              # Script para inicialização do banco de dados
+├── requirements.txt        # Dependências do projeto
+├── static/                 # Arquivos estáticos
+│   ├── css/                # Folhas de estilo
+│   ├── js/                 # Scripts JavaScript
+│   └── img/                # Imagens
+└── templates/              # Templates HTML
+    ├── base.html           # Template base
+    ├── login.html          # Página de login
+    ├── dashboard.html      # Dashboard principal
+    ├── colheitadeiras/     # Templates para gestão de colheitadeiras
+    ├── manutencoes/        # Templates para manutenções
+    │   ├── preventivas/    # Manutenções preventivas
+    │   └── corretivas/     # Manutenções corretivas
+    ├── trocas_oleo/        # Templates para trocas de óleo
+    ├── registros_horimetro/ # Templates para registros de horímetro
+    └── estoque/            # Templates para gestão de estoque
+</pre>
+                </div>
+
+                <div id="colheitadeiras" class="doc-section">
+                    <h2>Gestão de Colheitadeiras</h2>
+                    <p>
+                        O módulo de gestão de colheitadeiras permite o cadastro completo dos equipamentos com as seguintes informações:
+                    </p>
+                    <ul>
+                        <li><strong>Modelo:</strong> Identificação do modelo da colheitadeira (ex: John Deere S700)</li>
+                        <li><strong>Ano:</strong> Ano de fabricação do equipamento</li>
+                        <li><strong>Número de Frota:</strong> Identificador único da colheitadeira na frota</li>
+                        <li><strong>Status:</strong> Estado atual do equipamento (Ativa, Em Manutenção, Inativa)</li>
+                    </ul>
+                    <p>
+                        Através deste módulo, é possível:
+                    </p>
+                    <ul>
+                        <li>Listar todas as colheitadeiras cadastradas</li>
+                        <li>Adicionar novas colheitadeiras</li>
+                        <li>Editar informações de colheitadeiras existentes</li>
+                        <li>Visualizar detalhes completos de cada equipamento</li>
+                        <li>Acessar o histórico de manutenções, trocas de óleo e registros de horímetro</li>
+                    </ul>
+                </div>
+
+                <div id="manutencoes" class="doc-section">
+                    <h2>Manutenções</h2>
+                    <h3>Manutenções Preventivas</h3>
+                    <p>
+                        O sistema permite o agendamento e acompanhamento de manutenções preventivas baseadas em horas de uso ou datas específicas.
+                        Para cada manutenção preventiva, são registradas as seguintes informações:
+                    </p>
+                    <ul>
+                        <li><strong>Colheitadeira:</strong> Equipamento que receberá a manutenção</li>
+                        <li><strong>Descrição:</strong> Detalhes sobre o tipo de manutenção a ser realizada</li>
+                        <li><strong>Data Agendada:</strong> Data programada para a manutenção</li>
+                        <li><strong>Horímetro Agendado:</strong> Valor do horímetro para realizar a manutenção</li>
+                        <li><strong>Status:</strong> Estado atual da manutenção (Pendente, Realizada, Cancelada)</li>
+                        <li><strong>Data de Realização:</strong> Data em que a manutenção foi efetivamente realizada</li>
+                        <li><strong>Observações:</strong> Informações adicionais sobre a manutenção realizada</li>
+                    </ul>
+
+                    <h3>Manutenções Corretivas</h3>
+                    <p>
+                        O módulo de manutenções corretivas permite o registro de falhas e reparos realizados nos equipamentos.
+                        Para cada manutenção corretiva, são registradas as seguintes informações:
+                    </p>
+                    <ul>
+                        <li><strong>Colheitadeira:</strong> Equipamento que apresentou a falha</li>
+                        <li><strong>Descrição da Falha:</strong> Detalhes sobre o problema identificado</li>
+                        <li><strong>Data de Início:</strong> Data em que a manutenção corretiva foi iniciada</li>
+                        <li><strong>Status:</strong> Estado atual da manutenção (Em Andamento, Concluída)</li>
+                        <li><strong>Data de Conclusão:</strong> Data em que a manutenção foi concluída</li>
+                        <li><strong>Solução:</strong> Descrição da solução aplicada para resolver o problema</li>
+                        <li><strong>Peças Substituídas:</strong> Lista de peças utilizadas no reparo</li>
+                    </ul>
+                </div>
+
+                <div id="horimetro" class="doc-section">
+                    <h2>Registros de Horímetro</h2>
+                    <p>
+                        O módulo de registros de horímetro permite o acompanhamento das horas de trabalho de cada colheitadeira,
+                        informação essencial para o planejamento das manutenções preventivas e trocas de óleo.
+                    </p>
+                    <p>
+                        Para cada registro de horímetro, são armazenadas as seguintes informações:
+                    </p>
+                    <ul>
+                        <li><strong>Colheitadeira:</strong> Equipamento ao qual o registro se refere</li>
+                        <li><strong>Data do Registro:</strong> Data em que a leitura foi realizada</li>
+                        <li><strong>Valor do Horímetro:</strong> Número de horas registradas no equipamento</li>
+                    </ul>
+                    <p>
+                        O sistema utiliza esses registros para:
+                    </p>
+                    <ul>
+                        <li>Calcular a média de uso diário de cada equipamento</li>
+                        <li>Prever quando serão atingidos os valores para manutenções programadas</li>
+                        <li>Gerar alertas quando um equipamento está próximo de atingir o valor para manutenção</li>
+                        <li>Fornecer dados para relatórios de utilização da frota</li>
+                    </ul>
+                </div>
+
+                <div id="trocas-oleo" class="doc-section">
+                    <h2>Trocas de Óleo</h2>
+                    <p>
+                        O módulo de trocas de óleo permite o registro e acompanhamento das trocas realizadas em cada colheitadeira.
+                        Para cada troca de óleo, são registradas as seguintes informações:
+                    </p>
+                    <ul>
+                        <li><strong>Colheitadeira:</strong> Equipamento que recebeu a troca de óleo</li>
+                        <li><strong>Data da Troca:</strong> Data em que a troca foi realizada</li>
+                        <li><strong>Horímetro:</strong> Valor do horímetro no momento da troca</li>
+                        <li><strong>Tipo de Óleo:</strong> Especificação do óleo utilizado (ex: 15W40)</li>
+                        <li><strong>Quantidade (litros):</strong> Volume de óleo utilizado</li>
+                        <li><strong>Próxima Troca (horímetro):</strong> Valor do horímetro para a próxima troca</li>
+                    </ul>
+                    <p>
+                        O sistema utiliza essas informações para:
+                    </p>
+                    <ul>
+                        <li>Gerar alertas quando um equipamento está próximo da próxima troca de óleo</li>
+                        <li>Calcular o consumo médio de óleo por equipamento</li>
+                        <li>Fornecer histórico completo de trocas para cada colheitadeira</li>
+                        <li>Auxiliar no planejamento de compras de óleo para o estoque</li>
+                    </ul>
+                </div>
+
+                <div id="estoque" class="doc-section">
+                    <h2>Gestão de Est
+(Content truncated due to size limit. Use line ranges to read in chunks)

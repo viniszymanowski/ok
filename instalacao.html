@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalação - Sistema de Controle de Manutenção de Colheitadeiras</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/john-deere-theme.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #367C2B;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .install-section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #367C2B;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .alert-info {
+            background-color: #e8f4f8;
+            border-color: #b8e2f2;
+        }
+        .alert-warning {
+            background-color: #fff8e1;
+            border-color: #ffe0b2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #367C2B;">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/john_deere_logo.svg+xml" alt="John Deere Logo" height="30">
+                Sistema de Manutenção
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentacao.html">Documentação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="instalacao.html">Instalação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">Download</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="header">
+        <div class="container">
+            <h1>Guia de Instalação</h1>
+            <p class="lead">Instruções passo a passo para instalar e configurar o Sistema de Controle de Manutenção de Colheitadeiras</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="install-section">
+                    <h2>Requisitos do Sistema</h2>
+                    <p>Antes de iniciar a instalação, certifique-se de que seu ambiente atende aos seguintes requisitos:</p>
+                    <ul>
+                        <li>Python 3.8 ou superior</li>
+                        <li>pip (gerenciador de pacotes Python)</li>
+                        <li>SQLite (para desenvolvimento) ou MySQL (para produção)</li>
+                        <li>Navegador web moderno (Chrome, Firefox, Edge ou Safari)</li>
+                    </ul>
+                </div>
+
+                <div class="install-section">
+                    <h2>Opções de Instalação</h2>
+                    <p>Existem três maneiras de instalar e executar o Sistema de Controle de Manutenção de Colheitadeiras:</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h3 class="h5 mb-0">1. Instalação Local</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Ideal para testes e desenvolvimento. Instala o sistema em seu computador local.</p>
+                            <a href="#instalacao-local" class="btn btn-outline-success">Ver instruções</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h3 class="h5 mb-0">2. Instalação em Servidor</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Para ambientes de produção. Instala o sistema em um servidor Linux com MySQL.</p>
+                            <a href="#instalacao-servidor" class="btn btn-outline-success">Ver instruções</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h3 class="h5 mb-0">3. Implantação no Render</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Solução hospedada na nuvem. Implanta o sistema na plataforma Render.</p>
+                            <a href="#implantacao-render" class="btn btn-outline-success">Ver instruções</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="instalacao-local" class="install-section">
+                    <h2>Instalação Local</h2>
+                    <p>Siga os passos abaixo para instalar o sistema em seu computador local:</p>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">1</span> Baixe o pacote do sistema</h4>
+                        <p>Faça o download do arquivo ZIP contendo o sistema completo na <a href="download.html">página de download</a>.</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">2</span> Extraia os arquivos</h4>
+                        <p>Descompacte o arquivo ZIP em uma pasta de sua preferência.</p>
+                        <pre>unzip sistema_manutencao_agricola_final.zip -d sistema_manutencao</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">3</span> Crie um ambiente virtual Python</h4>
+                        <p>É recomendado usar um ambiente virtual para isolar as dependências do projeto:</p>
+                        <pre>cd sistema_manutencao
+python -m venv venv
+
+# No Windows
+venv\Scripts\activate
+
+# No Linux/Mac
+source venv/bin/activate</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">4</span> Instale as dependências</h4>
+                        <p>Instale todas as bibliotecas necessárias usando o pip:</p>
+                        <pre>pip install -r requirements.txt</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">5</span> Inicialize o banco de dados</h4>
+                        <p>Execute o script de inicialização para criar o banco de dados e inserir dados de exemplo:</p>
+                        <pre>python init_db.py</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">6</span> Inicie a aplicação</h4>
+                        <p>Execute o servidor Flask:</p>
+                        <pre>python app.py</pre>
+                        <p>A aplicação estará disponível em <a href="http://localhost:5000" target="_blank">http://localhost:5000</a></p>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h5>Credenciais de acesso</h5>
+                        <p>Use as seguintes credenciais para acessar o sistema:</p>
+                        <ul>
+                            <li><strong>Administrador:</strong> admin / admin123</li>
+                            <li><strong>Técnico:</strong> tecnico / tecnico123</li>
+                            <li><strong>Operador:</strong> operador / operador123</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="instalacao-servidor" class="install-section">
+                    <h2>Instalação em Servidor</h2>
+                    <p>Para ambientes de produção, recomendamos a instalação em um servidor Linux com MySQL:</p>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">1</span> Prepare o servidor</h4>
+                        <p>Instale os pacotes necessários no servidor:</p>
+                        <pre>sudo apt update
+sudo apt install python3 python3-pip python3-venv mysql-server nginx</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">2</span> Configure o MySQL</h4>
+                        <p>Crie um banco de dados e um usuário para o sistema:</p>
+                        <pre>sudo mysql -u root -p
+
+CREATE DATABASE manutencao_agricola;
+CREATE USER 'manutencao_user'@'localhost' IDENTIFIED BY 'sua_senha';
+GRANT ALL PRIVILEGES ON manutencao_agricola.* TO 'manutencao_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">3</span> Baixe e configure o sistema</h4>
+                        <p>Baixe o sistema e configure-o para usar o MySQL:</p>
+                        <pre>cd /var/www
+sudo mkdir manutencao_agricola
+sudo chown $USER:$USER manutencao_agricola
+cd manutencao_agricola
+
+# Baixe e extraia o sistema
+wget https://seusite.com/downloads/sistema_manutencao_agricola_final.zip
+unzip sistema_manutencao_agricola_final.zip
+
+# Crie e ative o ambiente virtual
+python3 -m venv venv
+source venv/bin/activate
+
+# Instale as dependências
+pip install -r requirements.txt
+pip install gunicorn</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">4</span> Configure o banco de dados</h4>
+                        <p>Edite o arquivo config.py para usar o MySQL:</p>
+                        <pre>nano config.py</pre>
+                        <p>Substitua a configuração do banco de dados por:</p>
+                        <pre>SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://manutencao_user:sua_senha@localhost/manutencao_agricola'</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">5</span> Inicialize o banco de dados</h4>
+                        <pre>python init_db.py</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">6</span> Configure o Gunicorn</h4>
+                        <p>Crie um arquivo de serviço para o Gunicorn:</p>
+                        <pre>sudo nano /etc/systemd/system/manutencao.service</pre>
+                        <p>Adicione o seguinte conteúdo:</p>
+                        <pre>[Unit]
+Description=Gunicorn instance to serve Sistema de Manutencao Agricola
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/manutencao_agricola
+Environment="PATH=/var/www/manutencao_agricola/venv/bin"
+ExecStart=/var/www/manutencao_agricola/venv/bin/gunicorn --workers 3 --bind unix:manutencao.sock -m 007 app:app
+
+[Install]
+WantedBy=multi-user.target</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">7</span> Configure o Nginx</h4>
+                        <p>Crie um arquivo de configuração para o Nginx:</p>
+                        <pre>sudo nano /etc/nginx/sites-available/manutencao</pre>
+                        <p>Adicione o seguinte conteúdo:</p>
+                        <pre>server {
+    listen 80;
+    server_name seu_dominio.com;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/var/www/manutencao_agricola/manutencao.sock;
+    }
+
+    location /static {
+        alias /var/www/manutencao_agricola/static;
+    }
+}</pre>
+                        <p>Ative o site e reinicie o Nginx:</p>
+                        <pre>sudo ln -s /etc/nginx/sites-available/manutencao /etc/nginx/sites-enabled
+sudo systemctl restart nginx</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">8</span> Inicie o serviço</h4>
+                        <pre>sudo systemctl start manutencao
+sudo systemctl enable manutencao</pre>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <h5>Segurança</h5>
+                        <p>Para um ambiente de produção, recomendamos:</p>
+                        <ul>
+                            <li>Configurar HTTPS com Let's Encrypt</li>
+                            <li>Alterar as senhas padrão</li>
+                            <li>Configurar backups regulares do banco de dados</li>
+                            <li>Implementar um firewall</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="implantacao-render" class="install-section">
+                    <h2>Implantação no Render</h2>
+                    <p>O Render é uma plataforma de hospedagem na nuvem que oferece uma maneira simples de implantar aplicações web.</p>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">1</span> Prepare o repositório no GitHub</h4>
+                        <p>Crie um novo repositório no GitHub:</p>
+                        <ol>
+                            <li>Acesse <a href="https://github.com/new" target="_blank">https://github.com/new</a></li>
+                            <li>Crie um novo repositório (ex: sistema-manutencao-colheitadeiras)</li>
+                            <li>Descompacte o arquivo ZIP do sistema em seu computador</li>
+                            <li>Inicialize um repositório Git local e faça o push para o GitHub:</li>
+                        </ol>
+                        <pre>cd sistema_manutencao
+git init
+git add .
+git commit -m "Versão inicial do Sistema de Manutenção de Colheitadeiras"
+git remote add origin https://github.com/SEU_USUARIO/sistema-manutencao-colheitadeiras.git
+git push -u origin main</pre>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">2</span> Crie uma conta no Render</h4>
+                        <p>Se ainda não tiver uma conta, cadastre-se em <a href="https://render.com/" target="_blank">https://render.com/</a></p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4><span class="step-number">3</span> Configure o serviço web</h4>
+         
+(Content truncated due to size limit. Use line ranges to read in chunks)
